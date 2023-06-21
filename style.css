@@ -7,32 +7,105 @@
     --Bright-orange: hsl(31, 77%, 52%);
     --Dark-cyan: hsl(184, 100%, 22%);
     --very-dark-cyan: hsl(179, 100%, 13%);
+    --Transparent-white: hsla(0, 0%, 100%, 0.75);
+    --Very-light-gray: hsl(0, 0%, 95%);
 }
-body {
-    height: 100vh;
+main {
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Lexend Deca", "Big Shoulders Display";
 }
-main {
-    max-width: 800px;
+.card {
+    max-width: 900px;
     display: flex;
+    border-radius: 1rem;
+    overflow: auto;
+    color: var(--Very-light-gray);
+    margin: 1rem;
 }
-main > section {
-    padding: 2rem;
+.card section {
+    padding: 3rem;
 }
 
-main section h2 {
-    margin: 1.5rem 0;
+.card section h2 {
+    margin: 1.8rem 0;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.7rem;
+    /* padding: 0 10px; */
+}
+.card section p {
+    font-size: 15px;
+    color: var(--Transparent-white);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+.card section button {
+    background-color: #fff;
+    padding: 15px 20px;
+    border: 2px solid;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+.card section button:hover {
+    background-color: transparent;
+    color: var(--Transparent-white);
+    border: 2px solid;
 }
 .first {
     background-color: var(--Bright-orange);
 }
+.first > button {
+    color: var(--Bright-orange);
+}
 .second {
     background-color: var(--Dark-cyan);
 }
+.second > button {
+    color: var(--Dark-cyan);
+}
 .third {
     background-color: var(--very-dark-cyan);
+}
+.third > button {
+    color: var(--very-dark-cyan);
+}
+
+.attribution {
+    text-align: center;
+}
+.attribution .user {
+    margin-top: -10px;
+    font-family: "Lexend Deca", "Big Shoulders Display";
+    text-decoration: none;
+    color: green;
+    font-size: 2rem;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 768px) {
+    main {
+        display: block;
+        height: auto;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+    }
+    .card section {
+        padding: 2rem;
+    }
+    .card section h2,
+    p {
+        margin: 1rem 0;
+    }
+    .card section button {
+        margin-top: 0.5rem;
+    }
 }
